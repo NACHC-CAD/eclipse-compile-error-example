@@ -7,15 +7,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-		<version>1.0.001</version>
+	<version>1.0.001</version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+	<maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <groupId>org.nachc.cad.tools</groupId>
     <artifactId>eclipse-compile-error-example</artifactId>
-	<version>1</version><!-- this should be "constant"! otherwise: ugly and threatening maven warning -->
+    <version>1.0.001</version><!-- this should be "constant"! otherwise: ugly and threatening maven warning -->
 
     <packaging>jar</packaging>
 
@@ -94,7 +94,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
-				    <!-- also better not to "confuse build bath" -->
+				    <!-- also better not to "confuse build path" -->
 					<finalName>nachc-cad-curlew-${project.version}</finalName>
 				</configuration>
 			</plugin>
