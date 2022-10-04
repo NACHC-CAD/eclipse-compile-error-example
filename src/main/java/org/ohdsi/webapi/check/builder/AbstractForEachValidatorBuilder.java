@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.ohdsi.webapi.check.validator.ValidatorGroup;
 
-public abstract class AbstractForEachValidatorBuilder<T, V> extends ValidatorBuilder<V> {
+public abstract class AbstractForEachValidatorBuilder<T, V, X> extends ValidatorBuilder<V> {
 
-    private List<ValidatorGroupBuilder<T, V>> validatorGroupBuilders = new ArrayList<ValidatorGroupBuilder<T, V>>();
+    private List<ValidatorGroupBuilder<T, X>> validatorGroupBuilders = new ArrayList<ValidatorGroupBuilder<T, X>>();
 
-    protected List<ValidatorGroup<T, V>> initGroups() {
+    protected List<ValidatorGroup<T,X>> initGroups() {
         return initAndBuildList(this.validatorGroupBuilders);
     }
 
