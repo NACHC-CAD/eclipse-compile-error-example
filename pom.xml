@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <properties>
+	<modelVersion>4.0.0</modelVersion>
+
+	<properties>
 		<version>1.0.001</version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
-    <groupId>org.nachc.cad.tools</groupId>
-    <artifactId>eclipse-compile-error-example</artifactId>
-    <version>${version}</version>
+	<groupId>org.nachc.cad.tools</groupId>
+	<artifactId>eclipse-compile-error-example</artifactId>
+	<version>1</version><!-- this should be "constant"! otherwise: ugly and threatening maven warning -->
 
-    <packaging>jar</packaging>
+	<packaging>jar</packaging>
 
-    <name>eclipse-compile-error-example</name>
+	<name>eclipse-compile-error-example</name>
 	<description>
 		This project contains an minimum complete example of a compile error seen in Eclipse but not when built with Maven (MVN) from the cmd line.  
 	</description>
 	<url>https://github.com/NACHC-CAD/eclipse-compile-error-example</url>
 
 	<licenses>
-	    <license>
-	      <name>Apache License, Version 2.0</name>
-	      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-	      <distribution>repo</distribution>
-	    </license>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
 	</licenses>
 
 	<!-- 
@@ -52,7 +52,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- JUNIT-TOOLBOX https://mvnrepository.com/artifact/com.googlecode.junit-toolbox/junit-toolbox -->
 		<dependency>
 			<groupId>com.googlecode.junit-toolbox</groupId>
@@ -83,23 +83,21 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<release>11</release>
-				</configuration>
-			</plugin>		
+				<version>3.8.1</version>
+			</plugin>
 
 			<!-- jar -->
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-jar-plugin</artifactId>
-			    <version>2.3.2</version>
-			    <configuration>
-			        <finalName>nachc-cad-curlew-${build.version}</finalName>                   
-			    </configuration>
-			</plugin>      
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+				    <!-- also better not to "confuse build bath" -->
+					<finalName>nachc-cad-curlew-${project.version}</finalName>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
-    
+
 </project>
