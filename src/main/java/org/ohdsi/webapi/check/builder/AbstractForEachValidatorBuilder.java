@@ -7,9 +7,9 @@ import org.ohdsi.webapi.check.validator.ValidatorGroup;
 
 public abstract class AbstractForEachValidatorBuilder<T, V> extends ValidatorBuilder<V> {
 
-    private List<ValidatorGroupBuilder<T, ?>> validatorGroupBuilders = new ArrayList<ValidatorGroupBuilder<T, ?>>();
+    private List<ValidatorGroupBuilder<T, V>> validatorGroupBuilders = new ArrayList<ValidatorGroupBuilder<T, V>>();
 
-    protected List<ValidatorGroup<T,?>> initGroups() {
+    protected List<ValidatorGroup<T, V>> initGroups() {
         return initAndBuildList(this.validatorGroupBuilders);
     }
 
